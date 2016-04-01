@@ -8,13 +8,15 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - rutorrent-data-test:/rutorrent:ro
+      - rutorrent-data:/rutorrent:ro
       - ./etc/nginx/conf/nginx.conf:/etc/nginx/conf/nginx.conf:ro
       - ./etc/nginx/conf.d:/etc/nginx/conf.d:ro
-  php:
-    image: rutorrent
+  rutorrent:
+    image: evild/rutorrent
     volumes:
-      - rutorrent-data-test:/rutorrent
+      - rutorrent-data:/rutorrent
+    ports:
+      - 51413:51413
 volumes:
-  rutorrent-data-test:
+  rutorrent-data:
     driver: local

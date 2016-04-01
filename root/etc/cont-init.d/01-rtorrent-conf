@@ -1,0 +1,5 @@
+#!/usr/bin/with-contenv sh
+
+mkdir -p /downloads/incoming /downloads/completed /downloads/watched /downloads/sessions /tmp/rtorrent
+chown -R www-data:www-data /downloads /rutorrent /tmp/rtorrent
+sed -i -e "/curl/ s/''/'\/usr\/bin\/curl'/" /rutorrent/conf/config.php

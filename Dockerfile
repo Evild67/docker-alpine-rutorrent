@@ -12,7 +12,6 @@ RUN \
   build_pkgs="build-base git libtool automake autoconf wget subversion cppunit-dev openssl-dev ncurses-dev curl-dev" \
   && runtime_pkgs="ffmpeg ca-certificates curl gzip zip unrar supervisor geoip" \
   && apk --no-cache add ${build_pkgs} ${runtime_pkgs} \
-  && git config --global http.sslVerify false \
   && cd /tmp \
   && git clone https://github.com/esmil/mktorrent \
   && svn checkout http://svn.code.sf.net/p/xmlrpc-c/code/stable xmlrpc-c \
